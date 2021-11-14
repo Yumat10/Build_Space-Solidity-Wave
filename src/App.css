@@ -3,6 +3,7 @@
   justify-content: center;
   width: 100%;
   margin-top: 64px;
+  padding: 0px 0px 50px 0px;
 }
 
 .dataContainer {
@@ -26,13 +27,98 @@
 }
 
 .waveButton {
+  width: 100%;
+}
+
+.waveButton:disabled {
+  cursor: initial;
+}
+
+.waveButton,
+.waveButtonOutlined {
   cursor: pointer;
-  margin-top: 16px;
   padding: 12.5px 0px;
   border: 0;
   border-radius: 5px;
-  background-color: var(--off-white);
-  color: var(--off-black);
+  background-color: var(--off-black);
+  color: var(--off-white);
+  font-size: 17px;
+  font-weight: 500;
+}
+
+.waveButtonOutlined {
+  background-color: transparent;
+  border: 2px solid var(--off-white);
+  color: var(--off-white);
+}
+
+.totalNumContainer {
+  font-size: 20px;
+  font-weight: 500;
+  text-align: center;
+  margin: 20px 0px;
+}
+
+.totalNum {
+  font-size: 50px;
+  font-weight: 600;
+  margin-top: 10px;
+}
+
+.waveEmoji {
+  cursor: pointer;
+  display: inline-block;
+}
+
+.previewContainer {
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+  margin: 0px 0px 30px 0px;
+}
+
+.previewContainer .input {
   font-size: 15px;
   font-weight: 500;
+  width: 100%;
+  padding: 10px 20px;
+  box-sizing: border-box;
+  border: 2px solid var(--off-black);
+  border-radius: 5px;
+}
+
+.waveContainer,
+.previewContainer {
+  background-color: var(--off-white);
+  color: var(--off-black);
+  padding: 30px 20px;
+  border-radius: 5px;
+  width: 500px;
+}
+
+.waveContainer .message,
+.previewContainer .message {
+  height: 250px;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.waveContainer .address {
+  font-size: 18px;
+  font-weight: 700;
+  margin: 10px 0px 20px 0px;
+}
+
+.waveContainer .timeStamp {
+  font-size: 15px;
+  font-weight: 400;
+  text-align: right;
+}
+
+.allWavesContainer {
+  display: flex;
+  flex-direction: column;
+  row-gap: 50px;
+  margin: 20px 0px 0px 0px;
 }
