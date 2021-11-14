@@ -112,6 +112,7 @@ export default function App() {
 
       console.log("Connected", accounts[0]);
       setCurrentAccount(accounts[0]);
+      await getAllWaves();
     } catch (error) {
       console.log(error);
     }
@@ -227,36 +228,37 @@ export default function App() {
             </div>
           </div>
         )}
-
-        <motion.div
-          className="previewContainer"
-          variants={waveContainerVariants}
-          initial="initial"
-          whileHover="hover"
-        >
-          <input
-            placeholder="Link to Beautiful Image (https://unsplash.com/)"
-            disabled={isMining}
-            value={inputText}
-            onChange={(e) => setInputText(e.target.value)}
-            className="input"
-          />
-          {inputText.length > 0 && (
-            <img src={inputText} alt={inputText} className="message" />
-          )}
-          <motion.button
-            variants={filledButtonVariants}
-            animate={
-              isMining || inputText.length === 0 ? "disabled" : "initial"
-            }
-            whileHover={!isMining && inputText.length > 0 && "hover"}
-            className="waveButton"
-            disabled={isMining || inputText.length === 0}
-            onClick={wave}
+        {currentAccount && (
+          <motion.div
+            className="previewContainer"
+            variants={waveContainerVariants}
+            initial="initial"
+            whileHover="hover"
           >
-            {isMining ? "Waving..." : "Wave at Me"}
-          </motion.button>
-        </motion.div>
+            <input
+              placeholder="Link to Beautiful Image (https://unsplash.com/)"
+              disabled={isMining}
+              value={inputText}
+              onChange={(e) => setInputText(e.target.value)}
+              className="input"
+            />
+            {inputText.length > 0 && (
+              <img src={inputText} alt={inputText} className="message" />
+            )}
+            <motion.button
+              variants={filledButtonVariants}
+              animate={
+                isMining || inputText.length === 0 ? "disabled" : "initial"
+              }
+              whileHover={!isMining && inputText.length > 0 && "hover"}
+              className="waveButton"
+              disabled={isMining || inputText.length === 0}
+              onClick={wave}
+            >
+              {isMining ? "Waving..." : "Wave at Me"}
+            </motion.button>
+          </motion.div>
+        )}
 
         {!currentAccount && (
           <motion.button
