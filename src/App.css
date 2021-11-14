@@ -97,6 +97,10 @@
   width: 500px;
 }
 
+.waveContainer {
+  cursor: pointer;
+}
+
 .waveContainer .message,
 .previewContainer .message {
   height: 250px;
@@ -122,4 +126,8 @@
   flex-direction: column;
   row-gap: 50px;
   margin: 20px 0px 0px 0px;
+}
+
+.waveContainerLink {
+  text-decoration: none;
 }
