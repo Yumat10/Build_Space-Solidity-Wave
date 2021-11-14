@@ -60,7 +60,7 @@ const waveContainerVariants = {
   },
 };
 
-const contractAddress = "0xa918B9278076A6889A39c2Ee28C0eD919F2aB5eC";
+const contractAddress = "0xaAFEab1A62bF9d375426Ef6E1C6988DcC056A8f3";
 
 export default function App() {
   // Store user's public wallet
@@ -276,28 +276,35 @@ export default function App() {
           {allWaves.map((wave, index) => {
             console.log(wave);
             return (
-              <motion.div
-                variants={waveContainerVariants}
-                initial="initial"
-                whileHover="hover"
-                key={index}
-                className="waveContainer"
+              <a
+                href={wave.message}
+                target="_blank"
+                rel="noreferrer noopener"
+                className="waveContainerLink"
               >
-                <img
-                  src={wave.message}
-                  alt={wave.message}
-                  className="message"
-                />
-                <div className="address">
-                  <span role="img" aria-label="wave emoji">
-                    👋
-                  </span>{" "}
-                  {wave.address}
-                </div>
-                <div className="timeStamp">
-                  {moment(wave.timeStamp).fromNow()}
-                </div>
-              </motion.div>
+                <motion.div
+                  variants={waveContainerVariants}
+                  initial="initial"
+                  whileHover="hover"
+                  key={index}
+                  className="waveContainer"
+                >
+                  <img
+                    src={wave.message}
+                    alt={wave.message}
+                    className="message"
+                  />
+                  <div className="address">
+                    <span role="img" aria-label="wave emoji">
+                      👋
+                    </span>{" "}
+                    {wave.address}
+                  </div>
+                  <div className="timeStamp">
+                    {moment(wave.timeStamp).fromNow()}
+                  </div>
+                </motion.div>
+              </a>
             );
           })}
         </div>
