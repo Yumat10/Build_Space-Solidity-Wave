@@ -50,6 +50,7 @@
   background-color: transparent;
   border: 2px solid var(--off-white);
   color: var(--off-white);
+  margin: 15px 0px 0px 0px;
 }
 
 .totalNumContainer {
